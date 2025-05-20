@@ -1,0 +1,274 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  body, html {
+    width: 100%;
+    height: 100%;
+    font-family: Inter, sans-serif;
+    overflow-x: hidden;
+  }
+
+  header {
+    width: 100vw;
+    height: 100vh;
+    background-image: url(images/mainBackground.jpg);
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    color: white;
+  }
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1vw 2vw;
+    background-color: transparent;
+    color: white;
+    position: relative;
+    z-index: 10;
+    font-family: 'Inter', sans-serif;
+  }
+  
+  .navbar-left,
+  .navbar-center,
+  .navbar-right {
+    display: flex;
+    align-items: center;
+  }
+  
+  .navbar-left {
+    flex: 1;
+  }
+  
+  .navbar-center {
+    flex: 1;
+    justify-content: center;
+    font-family: 'Solway', serif;
+    font-weight: 700;
+    font-size: 1.5vw;
+  }
+  
+  .logo-img {
+    height: 2vw;
+    margin-left: 0.5vw;
+  }
+  
+  .navbar-right {
+    flex: 1;
+    justify-content: flex-end;
+    gap: 1vw;
+    font-size: 1vw;
+  }
+  
+  .login-button {
+    padding: 0.3vw 1vw;
+    border: 1px solid black;
+    border-radius: 20px;
+    background: white;
+    color: black;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  
+  .signup {
+    margin-right: 0.5vw;
+  }
+  
+  .logo {
+    position: absolute;
+    top: 2%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 3vw;
+    font-family: Solway, serif;
+    font-weight: 700;
+    text-align: center;
+  }
+
+  .tagline {
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    font-size: 5vw;
+    font-weight: 600;
+    text-align: center;
+  }
+
+  .subtext {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1.2vw;
+    text-align: center;
+    width: 60%;
+  }
+
+  .search-box {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 70%;
+    max-width: 900px;
+    background: white;
+    padding: 1vw;
+    border-radius: 100px;
+    box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.05);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .search-box input {
+    
+    margin: 0 10px;
+    border: none;
+    outline: none;
+    font-size: 1vw;
+  }
+
+  .search-button {
+    background: #EB662B;
+    border-radius: 100px;
+    padding: 1vw 2vw;
+    color: white;
+    font-size: 1vw;
+    cursor: pointer;
+  }
+
+  .footer-bar {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 8vh;
+    background: white;
+    border-top-left-radius: 4vh;
+    border-top-right-radius: 4vh;
+    border-bottom: 0px;
+    
+  }
+  
+  body {
+    font-family: 'Inter', sans-serif;
+    background: white;
+    margin: 0;
+  }
+  .featured-trips{
+    margin-left: 7%;
+  }
+  .featured-trips h2 {
+    font-size: 24px;
+    color: #05073C;
+    margin-bottom: 20px;
+    
+  }
+  
+  .filters {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 30px;
+  }
+  
+  .filters button {
+    border: none;
+    background: white;
+    padding: 8px 18px;
+    border-radius: 20px;
+    font-size: 14px;
+    cursor: pointer;
+    color: #05073C;
+    transition: 0.3s;
+  }
+  
+  .filters button.active {
+    background: #05073C;
+    color: white;
+  }
+  
+  
+  .cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+  }
+  
+  .tour-card {
+    flex: 1 1 180px; /* дозволяє гнучко стискатись */
+    max-width: 300px;
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  }
+  
+  
+  .tour-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  .tour-content {
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    flex-grow: 1;
+  }
+  
+  .location {
+    font-size: 12px;
+    color: #717171;
+  }
+  
+  .title {
+    font-size: 15px;
+    color: #05073C;
+    font-weight: 500;
+  }
+  
+  .rating {
+    font-size: 13px;
+    color: #05073C;
+  }
+  
+  .info {
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid #E7E6E6;
+    padding-top: 10px;
+    font-size: 13px;
+    color: #05073C;
+  }
+  .customer-reviews-section {
+    display: flex;
+    justify-content: center; /* горизонтальне центрування */
+    align-items: center;     /* вертикальне центрування */
+    flex-direction: column;  /* щоб контент був вертикально, а не в ряд */
+    text-align: center;
+
+
+    width: 100vw;
+    height: 500px;  /* або інша потрібна висота */
+
+    position: relative;
+    background: url("images/reviewBackground.jpg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+}
+
+
+
+.reviewer-image{
+
+  max-width: 150px;
+}
