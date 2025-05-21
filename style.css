@@ -303,7 +303,8 @@
 
 .reviewer-image{
 
-  max-width: 150px;
+  max-width: 100px;
+  margin-top: 10%;
 }
 
 
@@ -368,9 +369,11 @@
 }
 
 .footer-bottom {
+  width: 100vw;
   border-top: 1px solid rgba(68, 65, 63, 0.15);
-  margin-top: 40px;
-  padding-top: 20px;
+  background: linear-gradient(to bottom,#b3a8b2,#a19eb1);
+  margin: o auto;
+  padding: 20px 20px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
