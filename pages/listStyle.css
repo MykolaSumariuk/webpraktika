@@ -1,0 +1,958 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+}
+
+/* Navbar */
+.navbar {
+  width: 100%;
+  background: white;
+  position: relative;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  z-index: 1000;
+  /* padding не ставимо, щоб було на всю ширину */
+}
+
+.navbar-container {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 20px; /* Однакові відступи зліва і справа */
+  height: 88px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
+  transition: all 0.3s ease;
+}
+
+/* Логотип */
+.logo-section {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  flex-shrink: 0;
+}
+
+.logo-text {
+  font-family: 'Solway', serif;
+  font-size: 24px;
+  font-weight: 700;
+  color: black;
+  white-space: nowrap;
+}
+
+.logo-section img {
+  display: block;
+  max-width: 70px;
+  height: auto;
+}
+
+/* Пошук */
+.search-bar {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 350px;
+  height: 44px;
+  background: #f0f0f0;
+  border-radius: 8px;
+  padding-left: 45px;
+  font-size: 14.77px;
+  color: #757575;
+  cursor: text;
+  flex-shrink: 1;
+  max-width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+/* Меню */
+.menu {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  flex-shrink: 0;
+  flex-wrap: nowrap;
+}
+
+.menu button {
+  border: none;
+  background: transparent;
+  font-size: 14.5px;
+  color: #05073C;
+  cursor: pointer;
+  padding: 8px 12px;
+  border-radius: 6px;
+  transition: background-color 0.2s ease;
+}
+
+.menu button:hover {
+  background-color: #f0f0f0;
+}
+
+/* Окремі кнопки */
+.currency,
+.login,
+.signup {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 44px;
+  border-radius: 200px;
+  padding: 0 20px;
+  white-space: nowrap;
+}
+
+.login {
+  background: #EB662B;
+  color: white;
+  font-weight: 500;
+}
+
+.signup {
+  font-weight: 500;
+}
+
+/* Секція контенту */
+.wrapper-section {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 20px 20px 20px 20px; /* Однакові падінги з усіх боків */
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  position: relative;
+}
+
+.breadcrumb-nav {
+  color: #05073C;
+  font-size: 14.3px;
+  font-weight: 400;
+  line-height: 28.13px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.page-subtitle {
+  color: #05073C;
+  font-size: 14.3px;
+  font-weight: 400;
+  line-height: 28.13px;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  max-width: 270px;
+  text-align: right;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.page-title {
+  color: #05073C;
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 60px;
+  max-width: 657px;
+  margin-top: 30px;
+}
+
+/* --- Адаптивність --- */
+
+/* Екрани до 1024px */
+@media (max-width: 1024px) {
+  .navbar-container {
+    flex-direction: column;
+    height: auto;
+    padding: 10px 20px; /* Залишаємо 20px з боків */
+    gap: 10px;
+  }
+
+  .search-bar {
+    width: 100%;
+    height: 40px;
+    font-size: 14px;
+  }
+
+  .menu {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .wrapper-section {
+    padding: 20px 20px 40px 20px; /* Зберігаємо горизонтальні падінги */
+  }
+
+  .page-subtitle {
+    position: static;
+    text-align: left;
+    max-width: 100%;
+    margin-bottom: 10px;
+    font-size: 13.5px;
+    line-height: 22px;
+  }
+}
+
+/* Екрани до 768px */
+@media (max-width: 768px) {
+  .navbar-container {
+    padding: 10px 16px; /* трохи зменшуємо */
+  }
+
+  .logo-text {
+    font-size: 20px;
+  }
+
+  .search-bar {
+    height: 36px;
+    font-size: 13px;
+  }
+
+  .menu button {
+    font-size: 13px;
+    padding: 6px 10px;
+  }
+
+  .currency,
+  .login,
+  .signup {
+    height: 36px;
+    padding: 0 12px;
+  }
+
+  .page-title {
+    font-size: 28px;
+    line-height: 36px;
+    margin-top: 15px;
+    max-width: 100%;
+  }
+
+  .breadcrumb-nav {
+    font-size: 13px;
+    line-height: 24px;
+  }
+
+  .wrapper-section {
+
+    padding: 20px 16px 40px 16px;
+  }
+}
+
+/* Екрани до 480px - мобільні */
+@media (max-width: 480px) {
+  .navbar-container {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px 16px;
+  }
+
+  .logo-section {
+    gap: 10px;
+  }
+
+  .logo-text {
+    font-size: 18px;
+  }
+
+  .search-bar {
+    width: 100%;
+    height: 36px;
+    font-size: 13px;
+  }
+
+  .menu {
+    width: 100%;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  .menu button {
+    flex-grow: 1;
+    flex-basis: 48%;
+    margin-bottom: 8px;
+    font-size: 13px;
+    padding: 8px 0;
+    text-align: center;
+  }
+
+  .currency,
+  .login,
+  .signup {
+    height: 36px;
+    padding: 0 10px;
+    flex-basis: auto;
+  }
+
+  .wrapper-section {
+    padding: 16px 16px 30px 16px;
+  }
+
+  .page-title {
+    font-size: 24px;
+    line-height: 32px;
+  }
+
+  .page-subtitle {
+    position: static;
+    text-align: left;
+    margin-bottom: 8px;
+    font-size: 12px;
+  }
+
+  .breadcrumb-nav {
+    font-size: 12px;
+    line-height: 20px;
+  }
+}
+
+/* Головна картка */
+.travel-filter-card {
+  width: 300px;
+  height: 818.25px;
+  position: relative;
+  border-radius: 12px;
+  border: 1px solid #E7E6E6;
+  box-sizing: border-box;
+  padding: 20px; /* Однаковий відступ */
+  background-color: white;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Верхня частина картки */
+.travel-card-header {
+  height: 148.13px;
+  background-color: #EB662B;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  padding: 30px;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.travel-question {
+  color: white;
+  font-size: 14.77px;
+  font-weight: 500;
+  line-height: 28.13px;
+}
+
+.travel-date-box {
+  background-color: white;
+  border-radius: 12px;
+  margin-top: 8px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+.travel-date-inner {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  font-size: 14.3px;
+  color: black;
+  width: 100%;
+}
+
+.travel-date-icon {
+  font-size: 20px;
+  color: #05073C;
+}
+
+.travel-date-text {
+  flex-grow: 1;
+  line-height: 28.13px;
+}
+
+/* Tour Type Title */
+.travel-tour-title {
+  margin: 20px 31px 5px; /* Тут можна вирівняти за падінгами, якщо хочеш */
+  font-size: 17.3px;
+  font-weight: 500;
+  color: #05073C;
+  line-height: 27px;
+}
+
+.travel-tour-icon {
+  position: absolute;
+  right: 31px;
+  top: 169.12px;
+  font-size: 15px;
+  color: #05073C;
+}
+
+/* Tour options */
+.travel-tour-options {
+  margin: 15px 31px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-height: 241px;
+  overflow: hidden;
+  position: relative;
+}
+
+.tour-option {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14.5px;
+  color: #05073C;
+  line-height: 16.5px;
+  font-weight: 400;
+}
+
+.tour-option input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  border-radius: 4px;
+  border: 1px solid #05073C;
+  accent-color: #05073C;
+}
+
+/* See more link */
+.see-more-link {
+  color: #4A43C4;
+  font-size: 14.5px;
+  font-weight: 500;
+  line-height: 28.13px;
+  cursor: pointer;
+  margin-top: 8px;
+}
+
+/* Фільтри нижче */
+.travel-filter-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 4%;
+  padding: 21px 31px 0;
+  border-top: 1px solid #E7E6E6;
+  font-size: 17.5px;
+  font-weight: 500;
+  color: #05073C;
+  line-height: 27px;
+}
+
+.filter-label {
+  flex-grow: 1;
+}
+
+.filter-arrow {
+  font-size: 15px;
+}
+
+.page-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.travel-filter-section {
+  flex: 1 1 300px;
+  background: #f7f7f7;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.travel-filter-card .travel-card-header,
+.travel-filter-card .travel-tour-title,
+.travel-filter-card .travel-tour-options,
+.travel-filter-card .travel-filter-section {
+  margin-bottom: 16px;
+}
+
+.travel-question {
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.travel-date-box {
+  background: #fff;
+  border: 1px solid #ccc;
+  padding: 8px;
+  border-radius: 8px;
+}
+
+.travel-date-icon {
+  display: inline-block;
+  margin-right: 6px;
+}
+
+.tour-option {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.see-more-link {
+  color: #007BFF;
+  cursor: pointer;
+  font-size: 14px;
+  margin-top: 6px;
+}
+
+.filter-label {
+  font-weight: bold;
+}
+
+.filter-arrow {
+  float: right;
+}
+
+.card-container {
+  flex: 2 1 600px;
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+}
+
+.card-image {
+  position: relative;
+}
+
+.card-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.discount-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: red;
+  color: white;
+  padding: 4px 8px;
+  font-weight: bold;
+  border-radius: 4px;
+}
+
+.card-info {
+  padding: 16px;
+  border-bottom: 1px solid #eee;
+}
+
+.location-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+  color: #777;
+}
+
+.location-icon {
+  margin-right: 6px;
+}
+
+.title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.rating {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.rating .star {
+  color: gold;
+  margin-right: 2px;
+}
+
+.rating-text {
+  margin-left: 8px;
+  color: #555;
+}
+
+.description {
+  margin-bottom: 12px;
+  color: #666;
+}
+
+.benefits {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  color: #444;
+}
+
+.card-pricing {
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.duration {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: #333;
+}
+
+.price {
+  text-align: right;
+}
+
+.old-price {
+  text-decoration: line-through;
+  color: #aaa;
+  font-size: 14px;
+}
+
+.from-text {
+  font-size: 12px;
+  color: #888;
+}
+
+.new-price {
+  font-size: 20px;
+  color: #28a745;
+  font-weight: bold;
+}
+
+.view-button {
+  background: #007BFF;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* Адаптивність */
+@media (max-width: 768px) {
+  .page-content {
+    flex-direction: column;
+  }
+
+  .card-container {
+    flex-direction: column;
+  }
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  gap: 24px;
+}
+
+.sidebar {
+  flex: 0 0 260px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.filter-box {
+  background: #f9f9f9;
+  padding: 20px;
+  border-radius: 12px;
+  border: 1px solid #e0e0e0;
+}
+
+.filter-box.orange {
+  background: #f15b2a;
+  color: white;
+}
+
+.filter-box.orange .date-box {
+  background: white;
+  color: black;
+  border-radius: 8px;
+  padding: 12px;
+  margin-top: 12px;
+  font-weight: 600;
+}
+
+.filter-title {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.filter-box label {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+.filter-box input[type="checkbox"] {
+  margin-right: 8px;
+}
+
+.see-more {
+  font-size: 14px;
+  color: #007bff;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.results {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.result-count {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 8px;
+}
+
+.tour-card {
+  display: flex;
+  gap: 16px;
+  padding: 16px;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  background: white;
+}
+
+.tour-image {
+  flex: 0 0 200px;
+  position: relative;
+}
+
+.tour-image img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.badge {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  background: #f15b2a;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.tour-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.tour-location {
+  font-size: 14px;
+  color: #888;
+}
+
+.tour-title {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 4px 0;
+}
+
+.tour-description {
+  font-size: 14px;
+  color: #444;
+  margin: 4px 0;
+}
+
+.tour-meta {
+  font-size: 13px;
+  color: #f15b2a;
+  display: flex;
+  gap: 16px;
+  margin-top: 6px;
+}
+
+.tour-price-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: right;
+  gap: 12px;
+}
+
+.tour-duration {
+  font-size: 14px;
+  color: #444;
+}
+
+.old-price {
+  text-decoration: line-through;
+  color: #aaa;
+  font-size: 14px;
+}
+
+.new-price {
+  color: #28a745;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.view-button {
+  border: 1px solid #f15b2a;
+  color: #f15b2a;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+@media (max-width: 900px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .tour-card {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .tour-price-box {
+    align-items: flex-end;
+    width: 100%;
+  }
+}
+
+
+/* Основний футер */
+.footer {
+  width: 100%;
+  background: rgba(236, 234, 233, 0.05);
+  padding: 40px 20px;
+  color: #05073C;
+  position: relative;
+  bottom: 0;
+  left: 0;
+}
+
+/* Контейнер з секціями */
+.footer-container {
+  max-width: 1320px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: space-between;
+}
+
+/* Одна секція */
+.footer-section {
+  min-width: 200px;
+  flex: 1;
+}
+
+/* Заголовки */
+.footer-section h4 {
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+/* Посилання та текст */
+.footer-section p,
+.footer-section a {
+  font-size: 14px;
+  line-height: 28px;
+  text-decoration: none;
+  color: #05073C;
+}
+
+.footer-section a:hover {
+  color: #EB662B;
+}
+
+/* Форма підписки */
+.newsletter-form {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+.newsletter-input {
+  flex: 1;
+  padding: 10px;
+  border-radius: 12px;
+  border: 1px solid #E7E6E6;
+  min-width: 200px;
+  max-width: 300px;
+}
+
+.newsletter-button {
+  padding: 10px 20px;
+  border-radius: 12px;
+  border: none;
+  background-color: #EB662B;
+  color: white;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.newsletter-button:hover {
+  background-color: #c6521e;
+}
+
+/* Соціальні іконки */
+.social-icons {
+  display: flex;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.social-icons img {
+  width: 34px;
+  height: 34px;
+}
+
+/* Нижній блок футера */
+.footer-bottom {
+  width: 100%;
+  border-top: 1px solid rgba(68, 65, 63, 0.15);
+  background: linear-gradient(to bottom, #b3a8b2, #a19eb1);
+  padding: 20px 5%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+  }
+}
