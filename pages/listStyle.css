@@ -84,22 +84,18 @@ body {
 .menu button {
   border: none;
   background: transparent;
-  font-size: 14.5px;
+  
   color: #05073C;
   cursor: pointer;
   padding: 8px 12px;
-  border-radius: 6px;
+
   transition: background-color 0.2s ease;
 }
 
-.menu button:hover {
-  background-color: #f0f0f0;
-}
+
 
 /* Окремі кнопки */
-.currency,
-.login,
-.signup {
+.currency {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -107,16 +103,6 @@ body {
   border-radius: 200px;
   padding: 0 20px;
   white-space: nowrap;
-}
-
-.login {
-  background: #EB662B;
-  color: white;
-  font-weight: 500;
-}
-
-.signup {
-  font-weight: 500;
 }
 
 /* Секція контенту */
@@ -1003,4 +989,35 @@ body {
   color: #05073C;
   line-height: 26px;
   white-space: nowrap;
+}
+
+.signup-button, .login-button {
+  padding: 0.4vw 1.2vw;
+  font-size: 1vw;
+  border-radius: 100px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  border: none;
+}
+
+.signup-button {
+  background-color: transparent;
+  color: white;
+  border: 1px solid white;
+}
+
+.signup-button:hover {
+  background-color: white;
+  color: black;
+}
+
+.login-button {
+  background-color: white;
+  color: black;
+}
+
+.login-button:hover {
+  background-color: #EB662B;
+  color: white;
 }
